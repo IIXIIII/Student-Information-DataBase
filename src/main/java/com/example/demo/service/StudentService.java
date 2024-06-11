@@ -9,8 +9,6 @@ public interface StudentService {
 
     public StudentDTO getStudentById(Long id);
 
-
-
     public Long addNewStudent(StudentDTO studentDTO);
 
     void deleteStudentById(long id);

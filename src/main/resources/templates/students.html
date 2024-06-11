@@ -1,0 +1,36 @@
+<!--Create Thymeleaf Templates-->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Students DISPLAY</title>
+</head>
+<body>
+<h1>Student List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.id}">1</td>
+        <td th:text="${student.name}">Name</td>
+        <td th:text="${student.email}">Email</td>
+        <td>
+            <a th:href="@{/students/view/edit/{id}(id=${student.id})}">Edit</a>
+            <a th:href="@{/students/view/delete/{id}(id=${student.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<button type="button" onclick="location.href='/students/view/add'" style="font-size: 20px; padding: 15px 30px; background-color: blue; color: white; border: none; border-radius: 5px;">Add Student</button>
+
+</body>
+</html>

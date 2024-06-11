@@ -26,7 +26,7 @@ public class studentController {
      * @param id - the id of the student
      * @return Response
      */
-    @GetMapping("/student/{id}")
+    @GetMapping("/students/{id}")
     public Response<StudentDTO> getStudentById(@PathVariable long id ){
         return Response.newSuccess( studentService.getStudentById(id));
     }
@@ -40,7 +40,7 @@ public class studentController {
      * @param studentDTO - include the detail of the student
      * @return response
      */
-    @PostMapping("/student")
+    @PostMapping("/students")
     public Response<Long> addNewStudent(@RequestBody StudentDTO studentDTO){
         return Response.newSuccess(studentService.addNewStudent(studentDTO));
     }
@@ -53,7 +53,7 @@ public class studentController {
      *
      * @param id - id of the student
      */
-    @DeleteMapping("/student/{id}")
+    @DeleteMapping("/students/{id}")
     public void deleteStudentById(@PathVariable long id){
         studentService.deleteStudentById(id);
     }
@@ -69,7 +69,7 @@ public class studentController {
      * @param email - optional
      * @return Response
      */
-    @PutMapping("/student/{id}")
+    @PutMapping("/students/{id}")
     public Response<StudentDTO> updataStudentById(@PathVariable long id, @RequestParam(required = false) String name, @RequestParam(required = false) String email){
         return Response.newSuccess(studentService.updataStudentById(id, name, email));
     }
@@ -81,7 +81,7 @@ public class studentController {
      *
      * @return all the student
      */
-    @GetMapping("/student/all")
+    @GetMapping("/students/all")
     public List<Student> getAllStudent(){
         return studentService.getAllStudent();
     }
