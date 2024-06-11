@@ -66,7 +66,7 @@ public class StudentViewController {
     @PostMapping("/update/{id}")
     public String updateStudent(@PathVariable("id") long id, @ModelAttribute StudentDTO student) {
         studentService.updataStudentById(id, student.getName(), student.getEmail());
-        return "redirect:/students";
+        return "redirect:/students/view";
     }
 
     /**
