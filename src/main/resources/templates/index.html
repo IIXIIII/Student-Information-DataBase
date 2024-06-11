@@ -2,6 +2,12 @@
 <html lang="ch" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text = "${title}"> 默认的title</title>
+    <!--th:text="${title}"可以让backend给frontend传递数据，frontend开发者可以独立开发-->
+    <!--这里的 默认title 不会显示在被传递参数的情况下-->
+    <!--动态数据-->
+    <title th:text="${title}">默认的title</title>
+    <meta th:content="${description}" name = "description" content = "默认的description" >
+    <meta th:content="${keyword}" name = "keyword" content = "默认的keyword" >
 </head>
+
 </html>

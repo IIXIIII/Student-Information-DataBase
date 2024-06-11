@@ -1,17 +1,18 @@
 package com.example.demo.controller;
 
+//import ch.qos.logback.core.model.Model;
 import com.example.demo.Response;
 import com.example.demo.dao.Student;
 import com.example.demo.dto.StudentDTO;
 import com.example.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@Controller
 public class studentController {
 
     @Autowired
@@ -84,18 +85,6 @@ public class studentController {
     public List<Student> getAllStudent(){
         return studentService.getAllStudent();
     }
-
-
-    /**
-     * code for the frontend
-     * @param module
-     * @return
-     */
-    @GetMapping("/index")
-    public String index (Module module){
-        return "index";
-    }
-
 
 
 }
